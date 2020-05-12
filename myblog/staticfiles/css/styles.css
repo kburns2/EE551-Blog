@@ -1,0 +1,34 @@
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.sidenav {
+    height: 100%;
+    width:160px;
+    position: fixed;
+    z-index:1;
+    top:0;
+    left:0;
+    background-color: lightblue;
+    overflow-x: hidden;
+    padding-top:20px
+}
+
+.sidenav a {
+    padding:6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: rgb(37, 13, 172);
+}
+
+.main{
+    margin-left: 160px;
+    padding: 0px 10px;
+}

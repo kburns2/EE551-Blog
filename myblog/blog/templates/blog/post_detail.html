@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>{{ post.title }}</h1>
+
+  <p><strong>Author:</strong> <a href="{% url 'posts-by-author' post.author.pk %}">{{ post.author }}</a></p>
+  <p><strong>Date:</strong> {{ post.post_date }}</p>  
+  <p><strong>Category:</strong> {{ post.category.all|join:", " }}</p>  
+  <p><strong>Summary:</strong> {{ post.summary }}</p>
+  <p><strong>Text: </strong> {{ post.text }}</p> 
+
+{% endblock %}

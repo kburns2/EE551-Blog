@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Basic Blogger</h1>
+
+<p>Welcome to <em>Basic Blogger</em>, a very basic Django blogging website developed as an <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/django_assessment_blog">assessment task</a> for the Django learning module on the Mozilla Developer Network.</p>
+
+<h2>Our Content</h2>
+<p>This basic blog site has the following record counts:</p>
+<ul>
+  <li><strong>Blogs Posted:</strong> {{ num_posts }}</li>
+  <li><strong>Blog Categories:</strong> {{ num_category }}</li>
+  <li><strong>Blog Authors:</strong> {{ num_authors }}</li>
+</ul>
+  
+<!-- <div>
+{% load static %}
+<img src="{% static "images/diy_django_mini_blog_models.png" %}" alt="My image" style="width:555px;height:540px;"/>
+</div>   -->
+
+{% endblock %}
