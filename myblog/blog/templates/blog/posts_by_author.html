@@ -1,13 +1,15 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <h1>{{blogger}}</h1>
-    
-    <h3>Bio</h3>
+      <h1>{{blogger}}</h1>
+
+  <div class = "author">  
+
+    <h3>Bio:</h3>
     
     <p>{{blogger.bio}}</p>
     
-    
+    <hr class ="n2">
 
     {% if post_list %}
     <h3>Blogs written</h3>
@@ -15,11 +17,12 @@
 
       {% for post in post_list %}
       <li>
-        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a> ({{post.post_date}})</a>
+        <a href="{{ post.get_absolute_url }}">{{ post.title }} -- <i>({{post.post_date}})<i></a>
       </li>
       {% endfor %}
 
     </ul>
+  </div>
 
     {% else %}
       <p>This blogger hasn't posted anything yet.</p>

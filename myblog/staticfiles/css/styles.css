@@ -1,9 +1,3 @@
-.sidebar-nav {
-    margin-top: 20px;
-    padding: 0;
-    list-style: none;
-}
-
 .sidenav {
     height: 100%;
     width:160px;
@@ -14,21 +8,100 @@
     background-color: lightblue;
     overflow-x: hidden;
     padding-top:20px
-}
-
-.sidenav a, h3 {
+ }
+ 
+ .sidenav a, h3 {
     padding:6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     color: black;
     display: block;
-}
-
-.sidenav a:hover {
+ }
+ 
+ .sidenav a:hover {
     color: rgb(37, 13, 172);
-}
-
-.main{
-    margin-left: 160px;
+ }
+ 
+ .main{
+    margin-left: 180px;
+    margin-right: 100px;
     padding: 0px 10px;
-}
+    font-size: 15px;
+ }
+ 
+ .main h1{
+    font-size: 40px;
+    text-align: center;
+ }
+ 
+ .main h2{
+    font-size: 35px;
+ }
+ 
+ .indexlist{
+    font-size: 18px;
+ }
+ 
+ .main p{
+    font-size: 18px;
+    padding: 0px 10px;
+ }
+ 
+ .main a{
+    font-size: 20px;
+    padding: 0px 10px;
+ }
+ 
+ /* this is for post detail ---------------------------------------*/
+ hr.n2 {
+   border: 5px solid lightblue;
+   margin-left: 25px;
+   margin-right: 25px;
+ }
+ 
+ p1, a1 { 
+    font-size: 18px;
+    padding: 0px 10px;
+    display: inline;
+ }
+ 
+ 
+ .comments h3{
+    font-size: 18px;
+    padding: 0px 10px;
+    margin-left: 25px;
+    font-weight: bold;
+ }
+ 
+ .comments p, a {
+    font-size: 15px;
+    margin-left: 30px;
+    padding: 0px 30px;
+ }
+ /* this is for author detail ---------------------------------------*/
+ 
+ .author h3 {
+    font-size: 20px;
+    padding: 0px 10px;
+    margin-left: 25px;
+    font-weight: bold;
+ }
+ 
+ .author p {
+    font-size: 18px;
+    padding: 0px 10px;
+    margin-left: 30px;
+ }
+ /* this is for author list ---------------------------------------*/
+ 
+ .postlist a, .postlist p {
+     display: inline;
+     vertical-align: top;
+     font-size: 22px;
+     line-height: 33px;    
+ }
+ 
+ .postlist p {
+    font-size: 15px;
+    font-weight: italic; 
+ }

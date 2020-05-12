@@ -5,9 +5,14 @@
   {% if post_list %}
   <ul>
     {% for post in post_list %}
+    
       <li>
-        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a> ({{post.author}})
+        <div class = "postlist">
+        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a> 
+        <p>-- {{post.author}}<p>
+        </div>
       </li>
+    
     {% endfor %}
   </ul>
   {% else %}
