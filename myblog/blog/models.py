@@ -66,10 +66,10 @@ class Comment(models.Model):
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     post_date = models.DateTimeField(auto_now_add=True)
     blog = models.ForeignKey(Post, on_delete=models.CASCADE)
-    '''
+    
     class Meta:
         ordering = ["post_date"]
-    '''
+    
     def __str__(self):
         """String for representing the Model object."""
         len_title=75

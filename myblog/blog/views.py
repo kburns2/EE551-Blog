@@ -3,6 +3,14 @@ from django.views import generic
 from blog.models import Author, Category, Post, Comment
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.edit import CreateView
+from django.urls import reverse
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from datetime import datetime
+from blog.models import Post
+
 # Create your views here.
 
 def index(request):
@@ -65,13 +73,6 @@ class BloggerListView(generic.ListView):
     paginate_by = 5
 
 
-
-
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import CreateView
-from django.urls import reverse
-
-
 class CommentCreate(LoginRequiredMixin, CreateView):
     """Form for adding a blog comment. Requires login."""
     model = Comment
@@ -82,7 +83,7 @@ class CommentCreate(LoginRequiredMixin, CreateView):
         # Call the base implementation first to get a context
         context = super(CommentCreate, self).get_context_data(**kwargs)
         # Get the blog from id and add it to the context
-        context['post'] = get_object_or_404(Blog, pk = self.kwargs['pk'])
+        context['post'] = get_object_or_404(Post, pk = self.kwargs['pk'])
         return context
         
     def form_valid(self, form):
@@ -97,3 +98,16 @@ class CommentCreate(LoginRequiredMixin, CreateView):
     def get_success_url(self): 
         """After posting comment return to associated blog."""
         return reverse('post-detail', kwargs={'pk': self.kwargs['pk'],})
+
+class PostCreate(CreateView):
+    model = Post
+    fields = '__all__'
+    initial = {'post_date': datetime.today().strftime('%m-%d-%y')}
+
+class PostUpdate(UpdateView):
+    model = Post
+    fields = ['title', 'author', 'summary', 'text']
+
+class PostDelete(DeleteView):
+    model = Post
+    success_url = reverse_lazy('posts')

@@ -11,5 +11,10 @@ urlpatterns = [
     path('authors/', views.BloggerListView.as_view(), name='authors'),
     path('authors/<int:pk>', views.Sort_by_Author.as_view(), name='posts-by-author'),
     path('authordetail/<int:pk>', views.AuthorDetailView.as_view(), name='author-detail'),
+    path('blog/<int:pk>/comment/', views.CommentCreate.as_view(), name='post-comment'),
+    path('post/create/', views.PostCreate.as_view(), name='post-create'),
+    path('post/<int:pk>/update/', views.PostUpdate.as_view(), name='post-update'),
+    path('post/<int:pk>/delete/', views.PostDelete.as_view(), name='post-delete'),
+
  
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

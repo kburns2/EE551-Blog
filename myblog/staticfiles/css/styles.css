@@ -16,7 +16,7 @@
     padding-top:20px
 }
 
-.sidenav a {
+.sidenav a, h3 {
     padding:6px 8px 6px 16px;
     text-decoration: none;
     font-size: 25px;
